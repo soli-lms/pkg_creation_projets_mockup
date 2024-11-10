@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <!-- Inclure l'en-tête -->
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . '/layouts/heade.php' ?>
+<?php include_once  $config['views_path'] . '/header.php'; ?>
 
 <body class="sidebar-mini" style="height: auto;">
 
