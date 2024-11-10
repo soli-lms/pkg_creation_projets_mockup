@@ -26,11 +26,11 @@
                         <div class="col-md-12">
                             <div class="card card-default">
                                 <div class="card-header">
-                                    <h3 class="card-title">Modifier un brief projet</h3>
+                                    <h3 class="card-title">Ajouter un brief projet</h3>
                                 </div>
                                 <div class="card-body p-0">
                                     <div class="bs-stepper">
-                                        <form id="deliverable-form">
+                                        <div id="deliverable-form">
 
                                             <div class="bs-stepper-header" role="tablist">
                                                 <!-- your steps here -->
@@ -363,15 +363,16 @@
                                                     <button class="btn btn-primary"
                                                         onclick="stepper.previous()">Précédent</button>
                                                     <a href="./index.php" type="submit"
-                                                        class="btn btn-primary">Modifier</a>
+                                                        class="btn btn-primary">Ajouter</a>
                                                 </div>
-                                        </form>
+                                                </d>
 
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
             </section>
         </div>
     </div>
@@ -386,11 +387,24 @@
     <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/layouts/footer.php" ?>
 
     </div>
+    <script>
+        // Add functionality for "Add Another Deliverable" button
+        const addDeliverableButton = document.getElementById("addDeliverable");
+        const deliverableForm = document.getElementById("deliverableForm");
 
+        addDeliverableButton.addEventListener("click", function () {
+            // Clone the existing deliverable group (including all its inputs)
+            const newDeliverableGroup = deliverableForm.querySelector(".deliverable-group").cloneNode(true);
+
+            // Clear the values of the cloned inputs to avoid pre-filled data
+            newDeliverableGroup.querySelector("input").value = "";
+
+            // Append the cloned group to the form
+            deliverableForm.appendChild(newDeliverableGroup);
+        });
+    </script>
     <!-- Inclure le script -->
     
-
-    <script src="https://cdn.ckeditor.com/ckeditor5/41.2.1/classic/ckeditor.js"></script>
     <script>
         function addInput() {
             // Create a new input element
@@ -404,6 +418,7 @@
             document.getElementById("deliverables-container").appendChild(input);
         }
     </script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.2.1/classic/ckeditor.js"></script>
     <script>
         ClassicEditor
             .create(document.querySelector('#inputDescription'))

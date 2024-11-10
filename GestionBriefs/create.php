@@ -1,17 +1,18 @@
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/config.php'; ?>
 <!DOCTYPE html>
 <html lang="fr">
 
 <!-- Inclure l'en-tête -->
-<?php include_once  $config['views_path'] . '/header.php'; ?>
+<?php include_once  $config['views_path'] . 'head.php'; ?>
 
 <body class="sidebar-mini" style="height: auto;">
 
     <div class="wrapper">
         <!-- Navigation -->
-        <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/layouts/nav.php' ?>
-
+      
+        <?php include_once  $config['views_path'] . 'nav.php'; ?>
         <!-- Barre latérale -->
-        <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/layouts/aside.php' ?>
+        <?php include_once  $config['views_path'] . 'aside.php'; ?>
 
 
         <div class="content-wrapper" style="min-height: 1302.4px;">
