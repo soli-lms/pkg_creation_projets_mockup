@@ -6,7 +6,7 @@
 <?php include_once  $config['views_path'] . 'head.php'; ?>
 
 <body class="sidebar-mini" style="height: auto;">
-
+ 
     <div class="wrapper">
         <!-- Navigation -->
         <?php include_once  $config['views_path'] . 'nav.php'; ?>
