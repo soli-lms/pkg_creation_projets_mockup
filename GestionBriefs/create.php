@@ -1,22 +1,22 @@
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/config.php'; ?>
 <!DOCTYPE html>
 <html lang="fr">
+   <script src="/node_modules/admin-lte/plugins/bs-stepper/js/bs-stepper.min.js"></script>
 
 <!-- Inclure l'en-tête -->
 <?php include_once  $config['views_path'] . 'head.php'; ?>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css">
 
 <body class="sidebar-mini" style="height: auto;">
 
     <div class="wrapper">
         <!-- Navigation -->
-      
         <?php include_once  $config['views_path'] . 'nav.php'; ?>
         <!-- Barre latérale -->
         <?php include_once  $config['views_path'] . 'aside.php'; ?>
 
-
         <div class="content-wrapper" style="min-height: 1302.4px;">
-
+ 
             <div class="content-header">
             </div>
 
@@ -24,40 +24,43 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="card card-default">
+                            <div class="card card-info">
                                 <div class="card-header">
-                                    <h3 class="card-title">Ajouter un brief projet</h3>
+                                    <h3 class="card-title"> <i class="far fa-check-circle nav-icon"></i> Ajouter un Autorisation</h3>
                                 </div>
                                 <div class="card-body p-0">
                                     <div class="bs-stepper">
                                         <div id="deliverable-form">
 
-                                            <div class="bs-stepper-header" role="tablist">
-                                                <!-- your steps here -->
-                                                <div class="step" data-target="#description-part">
-                                                    <button type="button" class="step-trigger" role="tab"
-                                                        aria-controls="description-part" id="description-part-trigger">
-                                                        <span class="bs-stepper-circle">1</span>
-                                                        <span class="bs-stepper-label">Description</span>
-                                                    </button>
+                                                <div class="bs-stepper-header" role="tablist">
+                                                    <!-- Step 1 -->
+                                                    <div class="step" data-target="#description-part">
+                                                        <button type="button" class="step-trigger" role="tab" aria-controls="description-part" id="description-part-trigger">
+                                                            <span class="bs-stepper-circle">1</span>
+                                                            <span class="bs-stepper-label">Informations</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="line"></div>
+                                                    
+                                                    <!-- Step 2 -->
+                                                    <div class="step" data-target="#competence-part">
+                                                        <button type="button" class="step-trigger" role="tab" aria-controls="competence-part" id="competence-part-trigger">
+                                                            <span class="bs-stepper-circle">2</span>
+                                                            <span class="bs-stepper-label">Competence</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="line"></div>
+                                                    
+                                                    <!-- Step 3 -->
+                                                    <div class="step" data-target="#affectation-part">
+                                                        <button type="button" class="step-trigger" role="tab" aria-controls="affectation-part" id="affectation-part-trigger">
+                                                            <span class="bs-stepper-circle">3</span>
+                                                            <span class="bs-stepper-label">Affectation</span>
+                                                        </button>
+                                                    </div>
                                                 </div>
-                                                <div class="line"></div>
-                                                <div class="step" data-target="#competence-part">
-                                                    <button type="button" class="step-trigger" role="tab"
-                                                        aria-controls="competence-part" id="competence-part-trigger">
-                                                        <span class="bs-stepper-circle">2</span>
-                                                        <span class="bs-stepper-label">Competence</span>
-                                                    </button>
-                                                </div>
-                                                <div class="line"></div>
-                                                <div class="step" data-target="#affectation-part">
-                                                    <button type="button" class="step-trigger" role="tab"
-                                                        aria-controls="affectation-part" id="affectation-part-trigger">
-                                                        <span class="bs-stepper-circle">3</span>
-                                                        <span class="bs-stepper-label">Affectation</span>
-                                                    </button>
-                                                </div>
-                                            </div>
+
+
                                             <div class="bs-stepper-content">
                                                 <!-- your steps content here -->
                                                 <div id="description-part" class="content" role="tabpanel"
@@ -80,19 +83,30 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="critere">Critère de validation</label>
-                                                        <textarea class="form-control" id="inputcriterevalidation"
-                                                            name="critere"
-                                                            rows="3">Le site Web doit être entièrement responsive, respecter les meilleures pratiques en développement Web et répondre aux exigences du client.</textarea>
-                                                    </div>
-                                                    <div class="form-group" id="deliverables-container">
-                                                        <label for="livrable">Nom de livrable</label>
-                                                        <input type="text" class="form-control mb-3"
-                                                            name="deliverable[]" placeholder="Nom de livrable"
-                                                            value="Presentation">
-                                                    </div>
-                                                    <button type="button" class="btn btn-primary"
-                                                        onclick="addInput()">Ajouter un autre livrable</button>
+                                                        <div class="input-group mb-3">
+                                                            <input type="text" class="form-control new-link-input reference-link" placeholder="Enter les Critères" id="linkInput1">
+                                                            <div class="input-group-append">
+                                                            <button type="button" class="btn btn-outline-info add-link-btn" onclick="addLivrable1()">
+                                                                <i class="fas fa-plus"></i>
+                                                            </button>
+                                                            </div>
+                                                        </div>
+                                                        <div id="livrables-list">
+                                                            <input type="text" disabled class="form-control mb-3" name="deliverable[]" placeholder="Nom de livrable" value="Le site Web doit être entièrement responsive">
+                                                            <input type="text" disabled class="form-control mb-3" name="deliverable[]" placeholder="Nom de livrable" value="respecter les meilleures pratiques en développement Web et répondre aux exigences du client">
+                                                        </div>
 
+                                                    </div>
+
+                                                    <div class="form-group" id="deliverables-container">
+                                                        <label for="livrable">Nom de livrable :</label>  
+                                                        <button type="button" class="btn btn-outline-info" id="livrable3" onclick="addInput()">
+                                                            <i class="fas fa-plus"></i>
+                                                        </button>
+                                                        <div id="livrables-list">
+                                                            <input type="text" class="form-control mb-3" name="deliverable[]" placeholder="Nom de livrable" value="Presentation">
+                                                        </div>
+                                                    </div>
 
 
                                                     <div class="form-group">
@@ -105,43 +119,26 @@
                                                         <input type="date" class="form-control" id="dateFin"
                                                             name="dateFin" value="2022-01-31">
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label for="project_resources">Resources</label>
-                                                        <div class="input-group mb-3">
-                                                            <input type="text"
-                                                                class="form-control new-link-input resource-link"
-                                                                placeholder="Enter a link">
-                                                            <div class="input-group-append">
-                                                                <button type="button"
-                                                                    class="btn btn-outline-success add-link-btn">Ajouter
-                                                                    un
-                                                                    lien</button>
-                                                            </div>
-                                                        </div>
-                                                        <ul class="list-group linked-items resource-list">
-                                                        </ul>
-                                                    </div>
+                                                    
                                                     <div class="form-group">
                                                         <label for="project_references">Reference</label>
                                                         <div class="input-group mb-3">
-                                                            <input type="text"
-                                                                class="form-control new-link-input reference-link"
-                                                                placeholder="Enter a link">
+                                                            <input type="text" class="form-control new-link-input reference-link" placeholder="Enter a link" id="linkInput">
                                                             <div class="input-group-append">
-                                                                <button type="button"
-                                                                    class="btn btn-outline-success add-link-btn">Ajouter
-                                                                    un
-                                                                    lien</button>
+                                                            <button type="button" class="btn btn-outline-info add-link-btn" onclick="addLink()">
+                                                                <i class="fas fa-plus"></i>
+                                                            </button>
                                                             </div>
                                                         </div>
-                                                        <ul class="list-group linked-items reference-list">
+                                                        <ul class="list-group linked-items reference-list" id="referenceList">
                                                         </ul>
                                                     </div>
 
 
+                                                    <button onclick="stepper.next()" class="btn btn-info">Submit</button>
 
-                                                    <button class="btn btn-primary"
-                                                        onclick="stepper.next()">Suivant</button>
+                                                    <!-- <button
+                                                        onclick="stepper.next()">Suivant</button> -->
                                                 </div>
                                                 <div id="competence-part" class="content" role="tabpanel"
                                                     aria-labelledby="projet-part-trigger">
@@ -309,9 +306,9 @@
 
 
                                                     </div>
-                                                    <button class="btn btn-primary"
+                                                    <button class="btn btn-info"
                                                         onclick="stepper.previous()">Précédent</button>
-                                                    <button class="btn btn-primary"
+                                                    <button class="btn btn-info"
                                                         onclick="stepper.next()">Suivant</button>
                                                 </div>
                                                 <div id="affectation-part" class="content" role="tabpanel"
@@ -360,10 +357,10 @@
                                                         </label>
                                                     </div>
 
-                                                    <button class="btn btn-primary"
+                                                    <button class="btn btn-info"
                                                         onclick="stepper.previous()">Précédent</button>
                                                     <a href="./index.php" type="submit"
-                                                        class="btn btn-primary">Ajouter</a>
+                                                        class="btn btn-info">Ajouter</a>
                                                 </div>
                                                 </d>
 
@@ -376,161 +373,167 @@
             </section>
         </div>
     </div>
-
-    <!-- Include footer -->
-    <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/layouts/footer.php" ?>
-    </div>
-    <script>
-        // Add functionality for "Add Another Deliverable" button
-        const addDeliverableButton = document.getElementById("addDeliverable");
-        const deliverableForm = document.getElementById("deliverableForm");
-
-        addDeliverableButton.addEventListener("click", function () {
-            // Clone the existing deliverable group (including all its inputs)
-            const newDeliverableGroup = deliverableForm.querySelector(".deliverable-group").cloneNode(true);
-
-            // Clear the values of the cloned inputs to avoid pre-filled data
-            newDeliverableGroup.querySelector("input").value = "";
-
-            // Append the cloned group to the form
-            deliverableForm.appendChild(newDeliverableGroup);
-        });
-    </script>
     <!-- Inclure le script -->
-    
-    <script>
-        function addInput() {
-            // Create a new input element
-            var input = document.createElement("input");
-            input.type = "text";
-            input.className = "form-control mb-3";
-            input.name = "deliverable[]"; // Using array syntax for form submission
-            input.placeholder = "Nom de livrable";
-
-            // Append the new input to the container
-            document.getElementById("deliverables-container").appendChild(input);
-        }
-    </script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/41.2.1/classic/ckeditor.js"></script>
-    <script>
-        ClassicEditor
-            .create(document.querySelector('#inputDescription'))
-            .then(editor => {
-                console.log(editor);
-            })
-            .catch(error => {
-                console.error(error);
-            });
-        ClassicEditor
-            .create(document.querySelector('#inputTravailafaire'))
-            .then(editor => {
-                console.log(editor);
-            })
-            .catch(error => {
-                console.error(error);
-            });
-        ClassicEditor
-            .create(document.querySelector('#inputcriterevalidation'))
-            .then(editor => {
-                console.log(editor);
-            })
-            .catch(error => {
-                console.error(error);
-            });
-    </script>
-    <script>
-
-        // BS-Stepper Init
-        document.addEventListener('DOMContentLoaded', function () {
-            window.stepper = new Stepper(document.querySelector('.bs-stepper'))
-        })
-    </script>
-
-    <!-- Place the following <script> and <textarea> tags your HTML's <body> -->
-
-    <script>
-        document.getElementById('checkAll').addEventListener('change', function () {
-            var checkboxes = document.querySelectorAll('.form-check-input');  // Select all checkboxes
-            for (var i = 0; i < checkboxes.length; i++) {
-                checkboxes[i].checked = this.checked;  // Set checked state based on "checkAll"
-            }
-        });
-
-    </script>
-    <script>
-        // Get references to elements
-        const addLinkButtons = document.querySelectorAll('.add-link-btn');
-        const resourceList = document.querySelector('.resource-list');
-        const referenceList = document.querySelector('.reference-list');
-
-        // Function to add a new link
-        function addNewLink(event) {
-            const newLinkInput = event.target.parentElement.parentElement.querySelector('.new-link-input');
-            const newLinkValue = newLinkInput.value.trim();
-            const targetList = event.target.parentElement.parentElement.nextElementSibling;
-
-            if (newLinkValue) {
-                const linkedItem = document.createElement('li');
-                linkedItem.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
-
-                const linkText = document.createElement('span');
-                linkText.textContent = newLinkValue;
-
-                const removeLinkBtn = document.createElement('button');
-                removeLinkBtn.classList.add('btn', 'btn-sm', 'btn-danger');
-                removeLinkBtn.textContent = 'Remove';
-                removeLinkBtn.addEventListener('click', function () {
-                    targetList.removeChild(linkedItem);
-                });
-
-                linkedItem.appendChild(linkText);
-                linkedItem.appendChild(removeLinkBtn);
-
-                targetList.appendChild(linkedItem);
-
-                newLinkInput.value = '';
-            }
-        }
-
-        // Add event listeners to the "Add Link" buttons
-        addLinkButtons.forEach(button => button.addEventListener('click', addNewLink));
-
-        // Populate existing links based on your project data
-        const existingResources = [
-            { url: "https://grafikart.fr/formations/laravel", text: "https://grafikart.fr/formations/laravel" },
-            { url: "https://laracasts.com/series/phpunit-testing-in-laravel", text: "https://laracasts.com/series/phpunit-testing-in-laravel" },
-        ];
-
-        const existingReferences = [
-            { url: "https://www.figma.com/file/Aciw4FSMe0rRsC3x1LH3R1/biblioth%C3%A8que-website?type=design&node-id=55%3A344&mode=design&t=bXJnh73iQoHkdkdj-1", text: "https://www.figma.com/file/Aciw4FSMe0rRsC3x1LH3R1/biblioth%C3%A8que-website?type=design&node-id=55%3A344&mode=design&t=bXJnh73iQoHkdkdj-1" },
-            { url: "https://m3.material.io/", text: "https://m3.material.io/" },
-        ];
-
-        // Function to populate existing links (optional)
-        function populateExistingLinks(linkData, targetList) {
-            linkData.forEach(link => {
-                const linkedItem = document.createElement('li');
-                linkedItem.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
-
-                const linkText = document.createElement('span');
-                linkText.textContent = link.text;
-
-                const removeLinkBtn = document.createElement('button');
-                removeLinkBtn.classList.add('btn', 'btn-sm', 'btn-danger');
-                removeLinkBtn.textContent = 'Remove';
-                removeLinkBtn.addEventListener('click', function () {
-                    targetList.removeChild(linkedItem);
-                });
-
-                linkedItem.appendChild(linkText);
-                linkedItem.appendChild(removeLinkBtn);
-                targetList.appendChild(linkedItem);
-            });
-        }
-
-        populateExistingLinks(existingResources, resourceList);
-        populateExistingLinks(existingReferences, referenceList);
-    </script>
+    <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/modules/pkg_creation_projets/layout/footer.php" ?>
 </body>
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.2.1/classic/ckeditor.js"></script>
+<script>
+        
+    //! Initialize CKEditor
+    function initializeEditor(selector) {
+        ClassicEditor
+            .create(document.querySelector(selector))
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }
+    //* Initialize editors for multiple elements
+        initializeEditor('#inputDescription');
+        initializeEditor('#inputTravailafaire');
+        initializeEditor('#inputcriterevalidation');
 
+    //! BS-Stepper Init
+    document.addEventListener('DOMContentLoaded', function () {
+        window.stepper = new Stepper(document.querySelector('.bs-stepper'))
+    })
+
+    //* Check all checkboxes when the page loads                        
+    document.getElementById('checkAll').addEventListener('change', function () {
+        // Select all checkboxes with the class .form-check-input
+        var checkboxes = document.querySelectorAll('.form-check-input');  
+        
+        checkboxes.forEach(function(checkbox) {
+            checkbox.checked = this.checked;  // Set the checked state based on "checkAll"
+        }, this); // 'this' refers to the checkAll checkbox element
+    });
+
+    //! Add a new livrable to the list
+    function addInput() {
+        // Create a new input element
+        var input = document.createElement("input");
+        input.type = "text";
+        input.className = "form-control mb-3";
+        input.name = "deliverable[]"; // Using array syntax for form submission
+        input.placeholder = "Nom de livrable";
+
+        // Append the new input to the container
+        document.getElementById("deliverables-container").appendChild(input);
+    }
+
+    //! Add a new link to the list
+    function addLink() {
+        const linkInput = document.getElementById('linkInput');
+        const fullLink = linkInput.value.trim();
+
+        if (fullLink) {
+            // Display only a short intro of the link (e.g., first 15 characters)
+            const linkIntro = fullLink.length > 15 ? fullLink.substring(0, 15) + '...' : fullLink;
+
+            // Create a new list item
+            const listItem = document.createElement('li');
+            listItem.className = 'list-group-item d-flex justify-content-between align-items-center';
+
+            // Create the copy button with the intro text
+            const copyButton = document.createElement('button');
+            copyButton.className = 'btn btn-outline-secondary copy-link-btn ml-2';
+            copyButton.innerText = linkIntro;
+            copyButton.onclick = function() {
+                navigator.clipboard.writeText(fullLink);
+                alert("Link copied to clipboard!");
+            };
+
+            // Create the remove button with a trash icon
+            const removeButton = document.createElement('button');
+            removeButton.className = 'btn btn-outline-danger remove-link-btn ml-2';
+            removeButton.innerHTML = '<i class="fas fa-trash"></i>';
+            removeButton.onclick = function() {
+                listItem.remove();
+            };
+
+            // Append both buttons to the list item
+            listItem.appendChild(copyButton);
+            listItem.appendChild(removeButton);
+
+            // Append the list item to the reference list
+            document.getElementById('referenceList').appendChild(listItem);
+
+            // Clear the input field
+            linkInput.value = '';
+        }
+    }
+
+    //! Add a new deliverable to the list
+    function addLivrable1() {
+        // Get the value from the input field with id 'linkInput'
+        var deliverableValue = document.getElementById('linkInput1').value.trim();
+
+        // If the value is not empty, create a new input and buttons
+        if (deliverableValue !== "") {
+            var newDiv = document.createElement('div');
+            newDiv.classList.add('livrable-item');
+
+            // Create the new input element
+            var newInput = document.createElement('input');
+            newInput.type = 'text';
+            newInput.classList.add('form-control', 'mb-3');
+            newInput.name = 'deliverable[]';
+            newInput.placeholder = 'Nom de livrable';
+            newInput.value = deliverableValue;  // Set the value to what was entered in 'linkInput'
+            newInput.disabled = true;  // Disable the input initially
+
+            // Create the delete button with a trash icon
+            var deleteButton = document.createElement('button');
+            deleteButton.type = 'button';
+            deleteButton.classList.add('btn', 'btn-outline-danger', 'btn-sm');
+            deleteButton.innerHTML = '<i class="fas fa-trash"></i>';
+            deleteButton.onclick = function() { removeLivrable(deleteButton); };
+
+            // Create the modify button with an edit icon (replace button with the icon only)
+            var modifyButton = document.createElement('button');
+            modifyButton.type = 'button';
+            modifyButton.classList.add('btn', 'btn-outline-warning', 'btn-sm');
+            modifyButton.innerHTML = '<i class="fas fa-edit"></i>';  // Modify to just the icon
+            modifyButton.onclick = function() { modifyLivrable(modifyButton); };
+
+            // Append the new elements to the container
+            newDiv.appendChild(newInput);
+            newDiv.appendChild(deleteButton);
+            newDiv.appendChild(modifyButton);
+
+            // Append the new div to the list of deliverables
+            document.getElementById('livrables-list').appendChild(newDiv);
+
+            // Clear the input field after adding the deliverable
+            document.getElementById('linkInput').value = "";
+        } else {
+            alert("Please enter a valid deliverable name.");
+        }
+            function removeLivrable(button) {
+                var livrableItem = button.parentNode;  // Get the parent div of the button (the whole item)
+                livrableItem.remove();  // Remove the entire item from the list
+            }
+
+        function modifyLivrable(button) {
+            var livrableItem = button.parentNode;  // Get the parent div of the button (the whole item)
+            var inputField = livrableItem.querySelector('input');  // Get the input field inside the div
+            
+            // Enable the input field for modification
+            inputField.disabled = !inputField.disabled;
+            
+            // Change the button text to reflect the state
+            if (inputField.disabled) {
+                // When the input is disabled, show the modify icon
+                button.innerHTML = '<i class="fas fa-edit"></i>';
+            } else {
+                // When the input is enabled, show the save icon
+                button.innerHTML = '<i class="fas fa-save"></i>';
+            }
+
+        }
+    }
+
+</script>
 </html>
