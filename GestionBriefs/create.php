@@ -145,166 +145,80 @@
                                                     <div class="form-group">
                                                         <h2>Compétences</h2>
                                                         <p>Veuillez sélectionner les compétences que vous possédez.</p>
-                                                        <table class="table">
-                                                            <thead>
+                                                        <table class="table" style="width: 100%; border-collapse: collapse;">
+                                                            <thead style="background-color: #6c757d; color: white; text-align: left;">
                                                                 <tr>
-                                                                    <th>Competence</th>
-                                                                    <th>Niveaux</th>
+                                                                    <th style="padding: 10px;">Compétence</th>
+                                                                    <th style="padding: 10px;">Niveaux</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                                <tr>
-                                                                    <td>
-                                                                        <label>
-                                                                            <input type="checkbox" class="mr-2"
-                                                                                name="competence" id="competence_mobile"
-                                                                                value="imiter">
-                                                                            <i class="fas fa-mobile-alt"></i> Maquetter
-                                                                            une
-                                                                            application mobile
-                                                                        </label>
+                                                                <tr style="background-color: #f8f9fa; transition: background-color 0.3s;">
+                                                                    <td style="padding: 10px; display: flex; align-items: center;">
+                                                                        <div class="form-check">
+                                                                            <input type="checkbox" class="form-check-input" id="competence_mobile" name="competence" value="maquetter">
+                                                                            <i class="fas fa-mobile-alt" style="margin-right: 8px; color: #007bff;"></i>
+                                                                            <label class="form-check-label" for="competence_mobile">Maquetter une application mobile</label>
+                                                                        </div>
                                                                     </td>
-                                                                    <td>
-                                                                        <select name="competence_mobile_level"
-                                                                            class="form-control">
+                                                                    <td style="padding: 10px;">
+                                                                        <select name="competence_mobile_level" class="custom-select" style="width: 100%; padding: 5px;">
                                                                             <option value="imiter">Imiter</option>
                                                                             <option value="adapter">Adapter</option>
-                                                                            <option value="transposer">Transposer
-                                                                            </option>
+                                                                            <option value="transposer">Transposer</option>
                                                                         </select>
                                                                     </td>
                                                                 </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <label>
-                                                                            <input type="checkbox" class="mr-2"
-                                                                                name="competence" id="competence_db"
-                                                                                value="adapter">
-                                                                            <i class="fas fa-database"></i> Manipuler
-                                                                            une
-                                                                            base de données - perfectionnement
-                                                                        </label>
+                                                                <tr style="background-color: #ffffff; transition: background-color 0.3s;">
+                                                                    <td style="padding: 10px; display: flex; align-items: center;">
+                                                                        <div class="form-check">
+                                                                            <input type="checkbox" class="form-check-input" id="competence_db" name="competence" value="manipuler">
+                                                                            <i class="fas fa-database" style="margin-right: 8px; color: #17a2b8;"></i>
+                                                                            <label class="form-check-label" for="competence_db">Manipuler une base de données - perfectionnement</label>
+                                                                        </div>
                                                                     </td>
-                                                                    <td>
-                                                                        <select name="competence_db_level"
-                                                                            class="form-control">
+                                                                    <td style="padding: 10px;">
+                                                                        <select name="competence_db_level" class="custom-select" style="width: 100%; padding: 5px;">
                                                                             <option value="imiter">Imiter</option>
                                                                             <option value="adapter">Adapter</option>
-                                                                            <option value="transposer">Transposer
-                                                                            </option>
+                                                                            <option value="transposer">Transposer</option>
                                                                         </select>
                                                                     </td>
                                                                 </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <label>
-                                                                            <input type="checkbox" class="mr-2"
-                                                                                name="competence"
-                                                                                id="competence_backend"
-                                                                                value="transposer">
-                                                                            <i class="fas fa-code"></i> Développer la
-                                                                            partie
-                                                                            back-end d’une application web ou web mobile
-                                                                            -
-                                                                            perfectionnement
-                                                                        </label>
+                                                                <tr style="background-color: #f8f9fa; transition: background-color 0.3s;">
+                                                                    <td style="padding: 10px; display: flex; align-items: center;">
+                                                                        <div class="form-check">
+                                                                            <input type="checkbox" class="form-check-input" id="competence_backend" name="competence" value="developper">
+                                                                            <i class="fas fa-code" style="margin-right: 8px; color: #28a745;"></i>
+                                                                            <label class="form-check-label" for="competence_backend">Développer la partie back-end d’une application web ou web mobile</label>
+                                                                        </div>
                                                                     </td>
-                                                                    <td>
-                                                                        <select name="competence_backend_level"
-                                                                            class="form-control">
+                                                                    <td style="padding: 10px;">
+                                                                        <select name="competence_backend_level" class="custom-select" style="width: 100%; padding: 5px;">
                                                                             <option value="imiter">Imiter</option>
                                                                             <option value="adapter">Adapter</option>
-                                                                            <option value="transposer">Transposer
-                                                                            </option>
+                                                                            <option value="transposer">Transposer</option>
                                                                         </select>
                                                                     </td>
                                                                 </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <label>
-                                                                            <input type="checkbox" class="mr-2"
-                                                                                name="competence" value="other" checked>
-                                                                            <i class="fas fa-cogs"></i> Collaborer à la
-                                                                            gestion d’un projet informatique et à
-                                                                            l’organisation de l’environnement de
-                                                                            développement
-                                                                        </label>
+                                                                <tr style="background-color: #ffffff; transition: background-color 0.3s;">
+                                                                    <td style="padding: 10px; display: flex; align-items: center;">
+                                                                        <div class="form-check">
+                                                                            <input type="checkbox" class="form-check-input" id="competence_collaborate" name="competence" value="collaborer" checked>
+                                                                            <i class="fas fa-cogs" style="margin-right: 8px; color: #ffc107;"></i>
+                                                                            <label class="form-check-label" for="competence_collaborate">Collaborer à la gestion d’un projet informatique</label>
+                                                                        </div>
                                                                     </td>
-                                                                    <td>
-                                                                        <select name="competence_deploy_level"
-                                                                            class="form-control">
+                                                                    <td style="padding: 10px;">
+                                                                        <select name="competence_collaborate_level" class="custom-select" style="width: 100%; padding: 5px;">
                                                                             <option value="imiter">Imiter</option>
                                                                             <option value="adapter">Adapter</option>
-                                                                            <option value="transposer">Transposer
-                                                                            </option>
-                                                                        </select>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <label>
-                                                                            <input type="checkbox" class="mr-2"
-                                                                                name="competence" value="other" checked>
-                                                                            <i class="fas fa-cogs"></i> Développer une
-                                                                            application web responsive avec HTML, CSS et
-                                                                            JavaScript
-                                                                        </label>
-                                                                    </td>
-                                                                    <td>
-                                                                        <select name="competence_deploy_level"
-                                                                            class="form-control">
-                                                                            <option value="imiter">Imiter</option>
-                                                                            <option value="adapter">Adapter</option>
-                                                                            <option value="transposer">Transposer
-                                                                            </option>
-                                                                        </select>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <label>
-                                                                            <input type="checkbox" class="mr-2"
-                                                                                name="competence" value="other" checked>
-                                                                            <i class="fas fa-cogs"></i> Utiliser un
-                                                                            framework PHP pour le développement backend
-                                                                            (par
-                                                                            exemple, Laravel)
-                                                                        </label>
-                                                                    </td>
-                                                                    <td>
-                                                                        <select name="competence_deploy_level"
-                                                                            class="form-control">
-                                                                            <option value="imiter">Imiter</option>
-                                                                            <option value="adapter">Adapter</option>
-                                                                            <option value="transposer">Transposer
-                                                                            </option>
-                                                                        </select>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <label>
-                                                                            <input type="checkbox" class="mr-2"
-                                                                                name="competence" value="other" checked>
-                                                                            <i class="fas fa-cogs"></i> Créer et gérer
-                                                                            une
-                                                                            base de données MySQL pour l'application web
-                                                                        </label>
-                                                                    </td>
-                                                                    <td>
-                                                                        <select name="competence_deploy_level"
-                                                                            class="form-control">
-                                                                            <option value="imiter">Imiter</option>
-                                                                            <option value="adapter">Adapter</option>
-                                                                            <option value="transposer">Transposer
-                                                                            </option>
+                                                                            <option value="transposer">Transposer</option>
                                                                         </select>
                                                                     </td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
-
-
                                                     </div>
                                                     <button class="btn btn-info"
                                                         onclick="stepper.previous()">Précédent</button>
