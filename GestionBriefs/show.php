@@ -2,106 +2,103 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<!-- Inclure l'en-tête -->
+<!-- Include Head -->
 <?php include_once  $config['views_path'] . 'head.php'; ?>
 
 <body class="sidebar-mini" style="height: auto;">
 
     <div class="wrapper">
-        <!-- Navigation -->
+        <!-- Include Navigation -->
         <?php include_once  $config['views_path'] . 'nav.php'; ?>
 
-        <!-- Barre latérale -->
+        <!-- Include Sidebar -->
         <?php include_once  $config['views_path'] . 'aside.php'; ?>
 
-
-
-
         <div class="content-wrapper" style="min-height: 1302.4px;">
+            <!-- Page Header -->
             <div class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1>Détails du projet</h1>
+                        <div class="col-sm-6 text-info">
+                            <h1>Les briefs projets</h1>
                         </div>
-                        <div class="col-sm-6">
-                            <a href="./edit.php" class="btn btn-default float-right"><i class="far fa-edit"></i>
+                        <div class="col-sm-6 ">
+                            <a href="./edit.php" class="btn btn-info float-right"><i class="far fa-edit"></i>
                                 Modifier</a>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Main Content -->
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="card">
+                            <div class="card card-info">
+                                    <div class="card-header">
+                                        <h3 class="card-title"> <i class="far fa-check-circle nav-icon"></i> Ajouter un brief projet</h3>
+                                    </div>
                                 <div class="card-body">
-                                    <div class="col-sm-12">
-                                        <label for="nom">Nom :</label>
+                                    <!-- Project Name -->
+                                    <div class="mb-3">
+                                        <label class="fw-bold">Nom :</label>
                                         <p>Exemple de projet de développement Web</p>
                                     </div>
 
-                                    <!-- Champ Compétences -->
-                                    <div class="col-sm-12">
-                                        <label for="competences">Compétences :</label>
+                                    <!-- Skills -->
+                                    <div class="mb-3">
+                                        <label class="fw-bold">Compétences :</label>
                                         <ul>
-                                            <li>C1. Maquetter une application mobile <span>(Imiter)</span></li>
-                                            <li>C2. Manipuler une base de données <span>(Adapter)</span> </li>
+                                            <li>C1. Maquetter une application mobile <span class="badge bg-info">Imiter</span></li>
+                                            <li>C2. Manipuler une base de données <span class="badge bg-warning">Adapter</span></li>
                                         </ul>
                                     </div>
 
-                                    <!-- Champ Travail à faire -->
-                                    <div class="col-sm-12">
-                                        <label for="travail">Travail à faire :</label>
-                                        <p>Concevoir et développer un site Web responsive pour une entreprise fictive.
-                                        </p>
+                                    <!-- Work Description -->
+                                    <div class="mb-3">
+                                        <label class="fw-bold">Travail à faire :</label>
+                                        <p>Concevoir et développer un site Web responsive pour une entreprise fictive.</p>
                                     </div>
 
-                                    <!-- Champ Critères de validation -->
-                                    <div class="col-sm-12">
-                                        <label for="validation">Critères de validation :</label>
-                                        <p>Le site Web doit être entièrement responsive, respecter les meilleures
-                                            pratiques en développement Web et répondre aux exigences du client.</p>
+                                    <!-- Validation Criteria -->
+                                    <div class="mb-3">
+                                        <label class="fw-bold">Critères de validation :</label>
+                                        <p>Le site Web doit être entièrement responsive, respecter les meilleures pratiques en développement Web et répondre aux exigences du client.</p>
                                     </div>
 
-                                    <!-- Champ Date de début et de fin -->
-                                    <div class="col-sm-12">
-                                        <label for="date">Date :</label>
-                                        <p>Date de début : 1er janvier 2024</p>
-                                        <p>Date de fin : 31 mars 2024</p>
+                                    <!-- Dates -->
+                                    <div class="mb-3">
+                                        <label class="fw-bold">Date :</label>
+                                        <p>Date de début : <span class="text-primary">1er janvier 2024</span></p>
+                                        <p>Date de fin : <span class="text-danger">31 mars 2024</span></p>
                                     </div>
 
-                                    <!-- Champ Ressources -->
-                                    <div class="col-sm-12">
-                                        <label for="resources">Ressources :</label>
-                                        <p><a href="https://exemple.com/ressources">https://exemple.com/ressources</a>
-                                        </p>
+                                    <!-- Resources -->
+                                    <div class="mb-3">
+                                        <label class="fw-bold">Ressources :</label>
+                                        <p><a href="https://exemple.com/ressources" target="_blank">https://exemple.com/ressources</a></p>
                                     </div>
 
-                                    <!-- Champ Référence -->
-                                    <div class="col-sm-12">
-                                        <label for="reference">Référence :</label>
-                                        <p><a href="https://exemple.com/reference">https://exemple.com/reference</a></p>
+                                    <!-- References -->
+                                    <div class="mb-3">
+                                        <label class="fw-bold">Référence :</label>
+                                        <p><a href="https://exemple.com/reference" target="_blank">https://exemple.com/reference</a></p>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-
         </div>
 
-
-        <!-- Inclure le pied de page -->
-        <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/layouts/footer.php" ?>
-
+        <!-- Include Footer -->
+        <?php include_once $_SERVER['DOCUMENT_ROOT'] . "/modules/pkg_creation_projets/layout/footer.php"; ?>
     </div>
 
-    <!-- Inclure le script -->
-    
+    <!-- Include Scripts -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.2.1/classic/ckeditor.js"></script>
+
 </body>
 
 </html>

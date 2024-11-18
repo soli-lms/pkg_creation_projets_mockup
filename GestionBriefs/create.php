@@ -18,271 +18,305 @@
         <div class="content-wrapper" style="min-height: 1302.4px;">
  
             <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6 text-info">
+                            <h1>Les briefs projets</h1>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="card card-info">
-                                <div class="card-header">
-                                    <h3 class="card-title"> <i class="far fa-check-circle nav-icon"></i> Ajouter un Autorisation</h3>
-                                </div>
-                                <div class="card-body p-0">
-                                    <div class="bs-stepper">
-                                        <div id="deliverable-form">
+                                <div class="card card-info">
+                                    <div class="card-header">
+                                        <h3 class="card-title"> <i class="far fa-check-circle nav-icon"></i> Ajouter un brief projet</h3>
+                                    </div>
+                                    <div class="card-body p-0">
+                                        <div class="bs-stepper">
+                                            <div id="deliverable-form">
 
-                                                <div class="bs-stepper-header" role="tablist">
-                                                    <!-- Step 1 -->
-                                                    <div class="step" data-target="#description-part">
-                                                        <button type="button" class="step-trigger" role="tab" aria-controls="description-part" id="description-part-trigger">
-                                                            <span class="bs-stepper-circle">1</span>
-                                                            <span class="bs-stepper-label">Informations</span>
-                                                        </button>
+                                                    <div class="bs-stepper-header" role="tablist">
+                                                        <!-- Step 1 -->
+                                                        <div class="step" data-target="#description-part">
+                                                            <button type="button" class="step-trigger" role="tab" aria-controls="description-part" id="description-part-trigger">
+                                                                <span class="bs-stepper-circle">1</span>
+                                                                <span class="bs-stepper-label">Détails du projet</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="line"></div>
+                                                        
+                                                        <!-- Step 2 -->
+                                                        <div class="step" data-target="#competence-part">
+                                                            <button type="button" class="step-trigger" role="tab" aria-controls="competence-part" id="competence-part-trigger">
+                                                                <span class="bs-stepper-circle">2</span>
+                                                                <span class="bs-stepper-label">Compétences requises</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="line"></div>
+                                                        
+                                                        <!-- Step 3 -->
+                                                        <div class="step" data-target="#affectation-part">
+                                                            <button type="button" class="step-trigger" role="tab" aria-controls="affectation-part" id="affectation-part-trigger">
+                                                                <span class="bs-stepper-circle">3</span>
+                                                                <span class="bs-stepper-label">Affecter une équipe</span>
+                                                            </button>
+                                                        </div>
                                                     </div>
-                                                    <div class="line"></div>
-                                                    
-                                                    <!-- Step 2 -->
-                                                    <div class="step" data-target="#competence-part">
-                                                        <button type="button" class="step-trigger" role="tab" aria-controls="competence-part" id="competence-part-trigger">
-                                                            <span class="bs-stepper-circle">2</span>
-                                                            <span class="bs-stepper-label">Competence</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="line"></div>
-                                                    
-                                                    <!-- Step 3 -->
-                                                    <div class="step" data-target="#affectation-part">
-                                                        <button type="button" class="step-trigger" role="tab" aria-controls="affectation-part" id="affectation-part-trigger">
-                                                            <span class="bs-stepper-circle">3</span>
-                                                            <span class="bs-stepper-label">Affectation</span>
-                                                        </button>
-                                                    </div>
-                                                </div>
 
 
-                                            <div class="bs-stepper-content">
-                                                <!-- your steps content here -->
-                                                <div id="description-part" class="content" role="tabpanel"
-                                                    aria-labelledby="description-part-trigger">
-                                                    <div class="form-group">
-                                                        <label for="titre">Titre du brief</label>
-                                                        <input type="text" class="form-control" id="titre" name="titre"
-                                                            value="Prototype">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="description">Description</label>
-                                                        <textarea class="form-control" id="inputDescription"
-                                                            name="description" rows="3">Description du projet</textarea>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="travail">Travail à faire</label>
-                                                        <textarea class="form-control" id="inputTravailafaire"
-                                                            name="travail"
-                                                            rows="3">Concevoir et développer un site Web responsive pour le client</textarea>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="critere">Critère de validation</label>
-                                                        <div class="input-group mb-3">
-                                                            <input type="text" class="form-control new-link-input reference-link" placeholder="Enter les Critères" id="linkInput1">
-                                                            <div class="input-group-append">
-                                                            <button type="button" class="btn btn-outline-info add-link-btn" onclick="addLivrable1()">
+                                                <div class="bs-stepper-content">
+                                                    <!-- your steps content here -->
+                                                    <div id="description-part" class="content" role="tabpanel"
+                                                        aria-labelledby="description-part-trigger">
+                                                        <div class="form-group">
+                                                            <label for="titre"> <i class="fa fa-file-alt" style="margin-right: 8px; color: #0f9333;"></i> Titre du brief </label>
+                                                            <input type="text" class="form-control" id="titre" name="titre" placeholder="Titre de projet" >                                                        
+                                                        </div>
+                                                        <div class="form-group mb-4">
+                                                            <label for="inputDescription" class="form-label fw-bold ">
+                                                                Description
+                                                            </label>
+                                                            <textarea 
+                                                                class="form-control rounded-3 shadow-sm border-primary" 
+                                                                id="inputDescription" 
+                                                                name="description" 
+                                                                rows="4" 
+                                                                placeholder="Ajoutez une description détaillée ici..."></textarea>
+                                                        </div>
+                                                        <div class="form-group mb-4">
+                                                            <label for="inputTravailafaire" class="form-label fw-bold ">
+                                                                Travail à faire
+                                                            </label>
+                                                            <textarea 
+                                                                class="form-control rounded-3 shadow-sm border-secondary"
+                                                                id="inputTravailafaire" 
+                                                                name="travail" 
+                                                                rows="4" 
+                                                                placeholder="Décrivez le travail à faire ici..."></textarea>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label for="critere"> <i class="fa fa-check-square" style="margin-right: 8px; color: #ff0033;"></i> Critère de validation </label>
+                                                            <div class="input-group mb-3">
+                                                                <input type="text" class="form-control new-link-input reference-link" placeholder="Enter les Critères" id="linkInput1">
+                                                                <div class="input-group-append">
+                                                                <button type="button" class="btn btn-outline-info add-link-btn" onclick="addLivrable1()">
+                                                                    <i class="fas fa-plus"></i>
+                                                                </button>
+                                                                </div>
+                                                            </div>
+                                                            <div id="livrables-list">
+                                                            </div>
+                                                            <div class="text-muted mt-2">
+                                                                <i class="fas fa-info-circle me-1"></i> Le site Web doit être entièrement responsive 
+                                                            </div>
+                                                            <div class="text-muted mt-2">
+                                                                <i class="fas fa-info-circle me-1"></i> respecter les meilleures pratiques en développement Web et répondre aux exigences du client 
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="form-group" id="deliverables-container">
+                                                            <label for="livrable"> <i class="fa fa-file-powerpoint " style="margin-right: 8px; color: #28a745;"></i> Nom de livrable </label>
+                                                            <button type="button" class="btn float-right btn-outline-info" id="livrable3" onclick="addInput()">
                                                                 <i class="fas fa-plus"></i>
                                                             </button>
+                                                            <div id="livrables-list">
+                                                                <input type="text" class="form-control mb-3" name="deliverable[]" placeholder="Nom de livrable" >
                                                             </div>
-                                                        </div>
-                                                        <div id="livrables-list">
-                                                            <input type="text" disabled class="form-control mb-3" name="deliverable[]" placeholder="Nom de livrable" value="Le site Web doit être entièrement responsive">
-                                                            <input type="text" disabled class="form-control mb-3" name="deliverable[]" placeholder="Nom de livrable" value="respecter les meilleures pratiques en développement Web et répondre aux exigences du client">
+                                                            <div class="text-muted mt-2">
+                                                                <i class="fas fa-info-circle me-1"></i> Presentation 
+                                                                <i class="fas fa-info-circle me-1"></i> Code 
+                                                            </div>
+
                                                         </div>
 
+                                                        <div class="form-group">
+                                                            <label for="dateDebut"> <i class="far fa-calendar-alt" style="margin-right: 8px; color: #ffc107;"></i> Date de début </label>
+                                                            <input type="date" class="form-control" id="dateDebut" name="dateDebut" value="2022-01-01">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="dateFin"><i class="far fa-calendar-alt" style="margin-right: 8px; color: #ffc107;"></i> Date de fin </label>
+                                                            <input type="date" class="form-control" id="dateFin" name="dateFin" value="2022-01-31">
+                                                        </div>                                                        
+                                                        <div class="form-group">
+                                                            <label for="project_references"> <i class="fa fa-external-link-alt" style="margin-right: 8px; color: #17a2b8;"></i> Référence </label>
+                                                            <div class="input-group mb-3">
+                                                                <input type="text" class="form-control new-link-input reference-link" placeholder="Enter a link" id="linkInput">
+                                                                <div class="input-group-append">
+                                                                <button type="button" class="btn btn-outline-info add-link-btn" onclick="addLink()">
+                                                                    <i class="fas fa-plus"></i>
+                                                                </button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="text-muted mt-2">
+                                                                <i class="fas fa-info-circle me-1"></i> https://www.google.com/
+                                                            </div>
+                                                            <ul class="list-group linked-items reference-list" id="referenceList">
+                                                            </ul>
+                                                            
+                                                        </div>
+
+
+                                                        <button onclick="stepper.next()" class="btn btn-info">Submit</button>
+
+                                                        <!-- <button
+                                                            onclick="stepper.next()">Suivant</button> -->
                                                     </div>
+                                                    <div id="competence-part" class="content" role="tabpanel"
+                                                        aria-labelledby="projet-part-trigger">
+                                                        <div class="form-group">
+                                                            <h2>Compétences</h2>
+                                                            <p>Veuillez sélectionner les compétences que vous possédez.</p>
+                                                            <table class="table" style="width: 100%; border-collapse: collapse;">
+                                                                <thead style="background-color: #6c757d; color: white; text-align: left;">
+                                                                    <tr>
+                                                                        <th style="padding: 10px;">Compétence</th>
+                                                                        <th style="padding: 10px;">Niveaux</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr style="background-color: #f8f9fa; transition: background-color 0.3s;">
+                                                                        <td style="padding: 10px; display: flex; align-items: center;">
+                                                                            <div class="form-check">
+                                                                                <input type="checkbox" class="form-check-input" id="competence_mobile" name="competence" value="maquetter">
+                                                                                <i class="fas fa-mobile-alt" style="margin-right: 8px; color: #007bff;"></i>
+                                                                                <label class="form-check-label" for="competence_mobile">Maquetter une application mobile</label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td style="padding: 10px;">
+                                                                            <select name="competence_mobile_level" class="custom-select" style="width: 100%; padding: 5px;">
+                                                                                <option value="imiter">Imiter</option>
+                                                                                <option value="adapter">Adapter</option>
+                                                                                <option value="transposer">Transposer</option>
+                                                                            </select>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr style="background-color: #ffffff; transition: background-color 0.3s;">
+                                                                        <td style="padding: 10px; display: flex; align-items: center;">
+                                                                            <div class="form-check">
+                                                                                <input type="checkbox" class="form-check-input" id="competence_db" name="competence" value="manipuler">
+                                                                                <i class="fas fa-database" style="margin-right: 8px; color: #17a2b8;"></i>
+                                                                                <label class="form-check-label" for="competence_db">Manipuler une base de données - perfectionnement</label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td style="padding: 10px;">
+                                                                            <select name="competence_db_level" class="custom-select" style="width: 100%; padding: 5px;">
+                                                                                <option value="imiter">Imiter</option>
+                                                                                <option value="adapter">Adapter</option>
+                                                                                <option value="transposer">Transposer</option>
+                                                                            </select>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr style="background-color: #f8f9fa; transition: background-color 0.3s;">
+                                                                        <td style="padding: 10px; display: flex; align-items: center;">
+                                                                            <div class="form-check">
+                                                                                <input type="checkbox" class="form-check-input" id="competence_backend" name="competence" value="developper">
+                                                                                <i class="fas fa-code" style="margin-right: 8px; color: #28a745;"></i>
+                                                                                <label class="form-check-label" for="competence_backend">Développer la partie back-end d’une application web ou web mobile</label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td style="padding: 10px;">
+                                                                            <select name="competence_backend_level" class="custom-select" style="width: 100%; padding: 5px;">
+                                                                                <option value="imiter">Imiter</option>
+                                                                                <option value="adapter">Adapter</option>
+                                                                                <option value="transposer">Transposer</option>
+                                                                            </select>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr style="background-color: #ffffff; transition: background-color 0.3s;">
+                                                                        <td style="padding: 10px; display: flex; align-items: center;">
+                                                                            <div class="form-check">
+                                                                                <input type="checkbox" class="form-check-input" id="competence_collaborate" name="competence" value="collaborer" checked>
+                                                                                <i class="fas fa-cogs" style="margin-right: 8px; color: #ffc107;"></i>
+                                                                                <label class="form-check-label" for="competence_collaborate">Collaborer à la gestion d’un projet informatique</label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td style="padding: 10px;">
+                                                                            <select name="competence_collaborate_level" class="custom-select" style="width: 100%; padding: 5px;">
+                                                                                <option value="imiter">Imiter</option>
+                                                                                <option value="adapter">Adapter</option>
+                                                                                <option value="transposer">Transposer</option>
+                                                                            </select>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <button class="btn btn-info"
+                                                            onclick="stepper.previous()">Précédent</button>
+                                                        <button class="btn btn-info float-right"
+                                                            onclick="stepper.next()">Suivant</button>
+                                                    </div>
+                                                    <div id="affectation-part" class="content" role="tabpanel"
+                                                        aria-labelledby="affectation-part-trigger">
+                                                        <div class="d-flex flex-column mt-3 form-check">
+                                                            <input type="checkbox" id="checkAll" class="form-check-input"
+                                                                id="flexCheckIndeterminate">
+                                                            <label class="form-check-label"
+                                                                for="flexCheckIndeterminate">Tout
+                                                                cocher<br>
+                                                                <?php
+                                                                $apprenants = [
+                                                                    "Zakaria Azizi",
+                                                                    "Fahd suirita",
+                                                                    "Aoulad Amar Samir",
+                                                                    "Ayoub Amazu",
+                                                                    "Bardich Oussama",
+                                                                    "BASRI Yahya",
+                                                                    "Bennani Kabchi Mohammed Amine ",
+                                                                    "Boussakla Yahya",
+                                                                    "Chabbeh Aymen",
+                                                                    "Dehbi Dina",
+                                                                    "El Bakali Ayoub",
+                                                                    "El Bouzidi Ayoub",
+                                                                    "El Ibbawi Abdelilah",
+                                                                    "El Mrabet Abderrafie",
+                                                                    "Jarane Hamza",
+                                                                    "MEZZIANE Mohamed",
+                                                                    "TAMRAOUI Abdelouahab",
+                                                                    "Tribak El yedri Ayoub",
+                                                                    "BOUGTOUB Samia",
+                                                                    "ZOUBAIR Douae",
+                                                                ];
+                                                                ?>
 
-                                                    <div class="form-group" id="deliverables-container">
-                                                        <label for="livrable">Nom de livrable :</label>  
-                                                        <button type="button" class="btn btn-outline-info" id="livrable3" onclick="addInput()">
-                                                            <i class="fas fa-plus"></i>
+                                                                <div class="row">
+                                                                    <?php foreach ($apprenants as $apprenant): ?>
+                                                                        <div class="col-sm-4 mb-2">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="checkbox"
+                                                                                    name="apprenants[]"
+                                                                                    value="<?php echo $apprenant; ?>" >
+                                                                                <label class="form-check-label"
+                                                                                    for="<?php echo $apprenant; ?>">
+                                                                                    <?php echo $apprenant; ?>
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                    <?php endforeach; ?>
+                                                                </div>
+
+                                                            </label>
+                                                        </div>
+
+                                                        <button class="btn btn-info"
+                                                            onclick="stepper.previous()">Précédent
                                                         </button>
-                                                        <div id="livrables-list">
-                                                            <input type="text" class="form-control mb-3" name="deliverable[]" placeholder="Nom de livrable" value="Presentation">
-                                                        </div>
+                                                        <a href="./index.php" type="submit"
+                                                            class="btn btn-info float-right">Ajouter</a>
                                                     </div>
+                                                    </d>
 
-
-                                                    <div class="form-group">
-                                                        <label for="dateDebut">Date de début</label>
-                                                        <input type="date" class="form-control" id="dateDebut"
-                                                            name="dateDebut" value="2022-01-01">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="dateFin">Date de fin</label>
-                                                        <input type="date" class="form-control" id="dateFin"
-                                                            name="dateFin" value="2022-01-31">
-                                                    </div>
-                                                    
-                                                    <div class="form-group">
-                                                        <label for="project_references">Reference</label>
-                                                        <div class="input-group mb-3">
-                                                            <input type="text" class="form-control new-link-input reference-link" placeholder="Enter a link" id="linkInput">
-                                                            <div class="input-group-append">
-                                                            <button type="button" class="btn btn-outline-info add-link-btn" onclick="addLink()">
-                                                                <i class="fas fa-plus"></i>
-                                                            </button>
-                                                            </div>
-                                                        </div>
-                                                        <ul class="list-group linked-items reference-list" id="referenceList">
-                                                        </ul>
-                                                    </div>
-
-
-                                                    <button onclick="stepper.next()" class="btn btn-info">Submit</button>
-
-                                                    <!-- <button
-                                                        onclick="stepper.next()">Suivant</button> -->
                                                 </div>
-                                                <div id="competence-part" class="content" role="tabpanel"
-                                                    aria-labelledby="projet-part-trigger">
-                                                    <div class="form-group">
-                                                        <h2>Compétences</h2>
-                                                        <p>Veuillez sélectionner les compétences que vous possédez.</p>
-                                                        <table class="table" style="width: 100%; border-collapse: collapse;">
-                                                            <thead style="background-color: #6c757d; color: white; text-align: left;">
-                                                                <tr>
-                                                                    <th style="padding: 10px;">Compétence</th>
-                                                                    <th style="padding: 10px;">Niveaux</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr style="background-color: #f8f9fa; transition: background-color 0.3s;">
-                                                                    <td style="padding: 10px; display: flex; align-items: center;">
-                                                                        <div class="form-check">
-                                                                            <input type="checkbox" class="form-check-input" id="competence_mobile" name="competence" value="maquetter">
-                                                                            <i class="fas fa-mobile-alt" style="margin-right: 8px; color: #007bff;"></i>
-                                                                            <label class="form-check-label" for="competence_mobile">Maquetter une application mobile</label>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td style="padding: 10px;">
-                                                                        <select name="competence_mobile_level" class="custom-select" style="width: 100%; padding: 5px;">
-                                                                            <option value="imiter">Imiter</option>
-                                                                            <option value="adapter">Adapter</option>
-                                                                            <option value="transposer">Transposer</option>
-                                                                        </select>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr style="background-color: #ffffff; transition: background-color 0.3s;">
-                                                                    <td style="padding: 10px; display: flex; align-items: center;">
-                                                                        <div class="form-check">
-                                                                            <input type="checkbox" class="form-check-input" id="competence_db" name="competence" value="manipuler">
-                                                                            <i class="fas fa-database" style="margin-right: 8px; color: #17a2b8;"></i>
-                                                                            <label class="form-check-label" for="competence_db">Manipuler une base de données - perfectionnement</label>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td style="padding: 10px;">
-                                                                        <select name="competence_db_level" class="custom-select" style="width: 100%; padding: 5px;">
-                                                                            <option value="imiter">Imiter</option>
-                                                                            <option value="adapter">Adapter</option>
-                                                                            <option value="transposer">Transposer</option>
-                                                                        </select>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr style="background-color: #f8f9fa; transition: background-color 0.3s;">
-                                                                    <td style="padding: 10px; display: flex; align-items: center;">
-                                                                        <div class="form-check">
-                                                                            <input type="checkbox" class="form-check-input" id="competence_backend" name="competence" value="developper">
-                                                                            <i class="fas fa-code" style="margin-right: 8px; color: #28a745;"></i>
-                                                                            <label class="form-check-label" for="competence_backend">Développer la partie back-end d’une application web ou web mobile</label>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td style="padding: 10px;">
-                                                                        <select name="competence_backend_level" class="custom-select" style="width: 100%; padding: 5px;">
-                                                                            <option value="imiter">Imiter</option>
-                                                                            <option value="adapter">Adapter</option>
-                                                                            <option value="transposer">Transposer</option>
-                                                                        </select>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr style="background-color: #ffffff; transition: background-color 0.3s;">
-                                                                    <td style="padding: 10px; display: flex; align-items: center;">
-                                                                        <div class="form-check">
-                                                                            <input type="checkbox" class="form-check-input" id="competence_collaborate" name="competence" value="collaborer" checked>
-                                                                            <i class="fas fa-cogs" style="margin-right: 8px; color: #ffc107;"></i>
-                                                                            <label class="form-check-label" for="competence_collaborate">Collaborer à la gestion d’un projet informatique</label>
-                                                                        </div>
-                                                                    </td>
-                                                                    <td style="padding: 10px;">
-                                                                        <select name="competence_collaborate_level" class="custom-select" style="width: 100%; padding: 5px;">
-                                                                            <option value="imiter">Imiter</option>
-                                                                            <option value="adapter">Adapter</option>
-                                                                            <option value="transposer">Transposer</option>
-                                                                        </select>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    <button class="btn btn-info"
-                                                        onclick="stepper.previous()">Précédent</button>
-                                                    <button class="btn btn-info"
-                                                        onclick="stepper.next()">Suivant</button>
-                                                </div>
-                                                <div id="affectation-part" class="content" role="tabpanel"
-                                                    aria-labelledby="affectation-part-trigger">
-                                                    <div class="d-flex flex-column mt-3 form-check">
-                                                        <input type="checkbox" id="checkAll" class="form-check-input"
-                                                            id="flexCheckIndeterminate">
-                                                        <label class="form-check-label"
-                                                            for="flexCheckIndeterminate">Tout
-                                                            cocher<br>
-                                                            <?php
-                                                            $apprenants = [
-                                                                "sarsri imrane",
-                                                                "Grain Reda",
-                                                                "Bouik Hussein",
-                                                                "Assaid Amina",
-                                                                "zaani hamza",
-                                                                "FAIZ SAFAA",
-                                                                "El ajoumi Mohammed aymane",
-                                                                "Lharrak Adnan",
-                                                                "YASMINE DAIFANE",
-                                                                "BEN NASAR ADNAN",
-                                                                "Achaou Hamid",
-                                                                "Betroji Jalil",
-                                                                "lamchatab amine",
-                                                                "Boukhar Soufiane"
-                                                            ];
-                                                            ?>
-
-                                                            <div class="row">
-                                                                <?php foreach ($apprenants as $apprenant): ?>
-                                                                    <div class="col-sm-4 mb-2">
-                                                                        <div class="form-check">
-                                                                            <input class="form-check-input" type="checkbox"
-                                                                                name="apprenants[]"
-                                                                                value="<?php echo $apprenant; ?>" checked>
-                                                                            <label class="form-check-label"
-                                                                                for="<?php echo $apprenant; ?>">
-                                                                                <?php echo $apprenant; ?>
-                                                                            </label>
-                                                                        </div>
-                                                                    </div>
-                                                                <?php endforeach; ?>
-                                                            </div>
-
-                                                        </label>
-                                                    </div>
-
-                                                    <button class="btn btn-info"
-                                                        onclick="stepper.previous()">Précédent</button>
-                                                    <a href="./index.php" type="submit"
-                                                        class="btn btn-info">Ajouter</a>
-                                                </div>
-                                                </d>
-
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                         </div>
             </section>
         </div>
