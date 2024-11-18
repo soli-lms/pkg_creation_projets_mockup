@@ -34,6 +34,7 @@
                     <div class="row">
                         <div class="col-12">
                             <!-- Boîte par défaut -->
+                             
                             <div class="card card-info">
                                 <div class="card-header">
                                     <h3 class="card-title"> <i class="far fa-check-circle nav-icon"></i> Tableau des brief projets</h3>
